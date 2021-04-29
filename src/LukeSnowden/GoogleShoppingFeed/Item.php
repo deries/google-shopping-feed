@@ -472,6 +472,8 @@ class Item
      */
     protected function getGroupIdentifier()
     {
+        return $this->nodes['id']->get('value');
+        
         if( ! isset( $this->nodes['mpn'] ) && ! isset( $this->nodes['gtin'] ) ) {
             throw new MissingIdentifierException("Please define a GTIN or MPN value before creating a variant.");
         }
